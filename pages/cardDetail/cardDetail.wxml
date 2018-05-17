@@ -1,0 +1,18 @@
+<!--pages/cardDetail.wxml-->
+<view class="view_show" style="padding:0px">
+    <view style="background-color:#e6e6e6">
+<image src="{{imageUrl}}" class="view_show"  style="margin: 0 auto;justify-content: center;align-items:  center;" bindtap='openBankImage' mode="aspectFit" />
+    </view>
+    <view class="bankinfo" wx:for="{{bank}}" wx:key="item" wx:for-item="item">
+      <text style="width:100px;">{{item.item!=''?item.item+':' : ''}}</text>
+        <text class="bankInfoText" selectable="true" bindlongpress='copy' data-value="{{item.itemstring}}" data-name="{{item.item}}" bindtap="callPhone">{{item.itemstring}}</text>
+    </view>  
+
+
+    <button type="primary" open-type="share" style = "margin:10px" bindtap='onShareAppMessage'>一键转发</button>
+    <button bindtap="setDisabled" bindtap='copy' style = "margin:10px">复制</button>
+    <view wx:if="{{share}}" bindtap='backHome' style="display:flex;justify-content: center;">
+      <image src='../../images/back_home.png' style="width:30px;height:30px;margin:10px"  />
+    </view>
+    
+</view>

@@ -1,0 +1,35 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.userinfo-avatar {
+  width: 228rpx;
+  height: 228rpx;
+  margin: 20rpx;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+page{
+  height: 100%;
+} 
+.container {
+  justify-content:center;
+}
+
+.post {
+    float: right;
+    position: fixed;
+    bottom: 50px;
+    right: 30px;  
+    width:10vw;
+    height:10vw;
+}

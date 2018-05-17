@@ -1,0 +1,14 @@
+<!--index.wxml-->
+<view class="container" style="background-image: url('http://p8r2kbbri.bkt.clouddn.com/132.png')">
+  <view class="userinfo">
+   
+      <image bindtap="addPicture" class="userinfo-avatar" src="../../images/saoyisao.png" background-size="cover"></image>
+  </view>  
+
+  <image class="post" src="../../images/zanshang.png" bindtap='previewImage'/>
+  <button session-from='weapp' class="contact-btn" open-type='contact'>
+  
+  <image class="post" style="right:130px" src="../../images/kefu.png"/>
+  
+  </button>
+</view>
