@@ -8,7 +8,10 @@
   <image class="post" src="../../images/zanshang.png" bindtap='previewImage'/>
   <button session-from='weapp' class="contact-btn" open-type='contact'>
   
-  <image class="post" style="right:130px" src="../../images/kefu.png"/>
+  <image class="post" style="top:110px" src="../../images/kefu.png"/>
   
   </button>
+<navigator target="miniProgram" open-type="navigate" app-id="wxc32a7d17af5153fd" path="/pages/index/index" extra-data="" version="release">
+  <image class="post" style="top:170px" src="../../images/card_logo.png"/>
+  </navigator>
 </view>

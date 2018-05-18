@@ -26,9 +26,9 @@ page{
 }
 
 .post {
-    float: right;
+    float: top;
     position: fixed;
-    bottom: 50px;
+    top: 50px;
     right: 30px;  
     width:10vw;
     height:10vw;
