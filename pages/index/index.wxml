@@ -1,17 +1,25 @@
 <!--index.wxml-->
 <view class="container" style="background-image: url('http://p8r2kbbri.bkt.clouddn.com/132.png')">
   <view class="userinfo">
-   
-      <image bindtap="addPicture" class="userinfo-avatar" src="../../images/saoyisao.png" background-size="cover"></image>
-  </view>  
 
-  <image class="post" src="../../images/zanshang.png" bindtap='previewImage'/>
+    <image bindtap="addPicture" class="userinfo-avatar" src="../../images/saoyisao.png" background-size="cover"></image>
+  </view>
+
+  <image class="post" src="../../images/zanshang.png" bindtap='previewImage' />
   <button session-from='weapp' class="contact-btn" open-type='contact'>
-  
-  <image class="post" style="top:110px" src="../../images/kefu.png"/>
-  
+
+    <image class="post" style="top:110px" src="../../images/kefu.png" />
+
   </button>
-<navigator target="miniProgram" open-type="navigate" app-id="wxc32a7d17af5153fd" path="/pages/index/index" extra-data="" version="release">
-  <image class="post" style="top:170px" src="../../images/card_logo.png"/>
+  <navigator target="miniProgram" open-type="navigate" app-id="wxc32a7d17af5153fd" path="/pages/index/index" extra-data="" version="release">
+    <image class="post" style="top:170px" src="../../images/card_logo.png" />
+  </navigator>
+
+  <navigator target="miniProgram" open-type="navigate" app-id="wxd1940318aaeb6958" path="/pages/index/index" extra-data="" version="release">
+    <image class="post" style="top:230px" src="../../images/doutu_logo.png" />
+  </navigator>
+
+  <navigator target="miniProgram" open-type="navigate" app-id="wxa86a90675a518176" path="/pages/welcome/welcome" extra-data="" version="release">
+    <image class="post" style="top:290px" src="../../images/color_logo.png" />
   </navigator>
 </view>
