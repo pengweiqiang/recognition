@@ -1,0 +1,24 @@
+{
+  "usingComponents": {
+    "van-icon": "../../../dist/icon/index",
+    "van-row": "../../../dist/row/index",
+    "van-col": "../../../dist/col/index",
+    "van-search": "../../../dist/search/index",
+    "van-tab": "../../../dist/tab/index",
+    "van-tabs": "../../../dist/tabs/index",
+    "van-button": "../../../dist/button/index",
+    "van-card": "../../../dist/card/index",
+    "van-tag": "../../../dist/tag/index",
+    "van-submit-bar": "../../../dist/submit-bar/index",
+    "van-dialog": "../../../dist/dialog/index",
+    "van-goods-action": "../../../dist/goods-action/index",
+    "van-goods-action-icon": "../../../dist/goods-action-icon/index",
+    "van-goods-action-button": "../../../dist/goods-action-button/index",
+    "van-sticky": "../../../dist/sticky/index",
+    "van-count-down": "../../../dist/count-down/index"
+  },
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "好物选购",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": true
+}

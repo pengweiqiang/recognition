@@ -1,0 +1,77 @@
+.container {
+    position: relative;
+    padding: 20px 50rpx 20rpx;
+    justify-content: flex-start;
+    -webkit-justify-content: flex-start;
+    background-color: #fafafa;
+}
+
+.ta {
+    /* flex: 1;
+    
+    box-sizing: border-box; */
+    font-size: 25rpx;
+    line-height: 60rpx;
+    width: 100%;
+    color:#000;
+}
+
+.fun-container {
+    width: 100%;
+    height: 200rpx;
+    background-color: #ecb1ac;
+}
+
+.fun-container-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon {
+    height: 70rpx;
+    width: 70rpx;
+    margin: 20rpx;
+}
+
+.fun-container-tips {
+    display: flex;
+}
+
+.tips {
+    font-size: 22rpx;
+}
+
+#aa {
+    margin-left: 60rpx;
+}
+
+#bb {
+    margin-left: 70rpx;
+}
+
+#cc {
+    margin-left: 78rpx;
+}
+
+#dd {
+    margin-left: 90rpx;
+}
+
+#ee {
+    margin-left: 85rpx;
+}
+#ff {
+    margin-left: 95rpx;
+}
+
+.img {
+    width: 100%;
+}
+
+.function{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+}

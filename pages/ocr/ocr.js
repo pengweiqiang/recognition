@@ -165,38 +165,52 @@ Page({
               imageUrl: imageUrl,
             });
             wx.request({
-              url: "https://weixin.shopin.net/wechatshop/ocr?imgUrl=" + imageUrl + "&ocrType=2",
+              url: imageUrl,
               method: 'GET',
+              responseType: 'arraybuffer',
               success: function (res) {
-                console.log("获取base64：" + (new Date().getTime() - starttime))
-                var errorcode = res.data.errorcode;
-                if (errorcode == 0) {
-                  var itemlist = res.data.items;
-                  var showInfo = [];
-                  var showInfoStr = "";
-                  for (var item in itemlist) {
-                    showInfoStr += itemlist[item].itemstring + "\n";
-                    showInfo.push(itemlist[item].itemstring);
-                  }
+                let base64 = wx.arrayBufferToBase64(res.data);
+                _this.ocrResult(base64);
                 
-                  _this.setData({
-                    showInfo: showInfo,
-                    showInfoStr: showInfoStr
-                  })
-                  wx.hideLoading();
-                  console.log(showInfo);
-                } else {
-                  wx.showToast({
-                    title: '识别失败，检查图片是否完整 ' + errorcode,
-                  })
-                }
-
               }, error: function (res) {
                 wx.hideLoading();
               }, complete: function (res) {
 
               }
             });
+            // wx.request({
+            //   url: "https://weixin.shopin.net/wechatshop/ocr?imgUrl=" + imageUrl + "&ocrType=2",
+            //   method: 'GET',
+            //   success: function (res) {
+            //     console.log("获取base64：" + (new Date().getTime() - starttime))
+            //     var errorcode = res.data.errorcode;
+            //     if (errorcode == 0) {
+            //       var itemlist = res.data.items;
+            //       var showInfo = [];
+            //       var showInfoStr = "";
+            //       for (var item in itemlist) {
+            //         showInfoStr += itemlist[item].itemstring + "\n";
+            //         showInfo.push(itemlist[item].itemstring);
+            //       }
+                
+            //       _this.setData({
+            //         showInfo: showInfo,
+            //         showInfoStr: showInfoStr
+            //       })
+            //       wx.hideLoading();
+            //       console.log(showInfo);
+            //     } else {
+            //       wx.showToast({
+            //         title: '识别失败，检查图片是否完整 ' + errorcode,
+            //       })
+            //     }
+
+            //   }, error: function (res) {
+            //     wx.hideLoading();
+            //   }, complete: function (res) {
+
+            //   }
+            // });
           }
         });
 
@@ -209,6 +223,77 @@ Page({
       complete: function (res) { },
     })
   },
+
+  //获取卡信息
+  ocrResult: function (base64) {
+    var starttime = new Date().getTime();
+    var _this = this;
+    wx.showLoading({
+      title: '解析中...',
+    })
+    var appId = getApp().globalData.aiAppId;
+    var appKey = getApp().globalData.aiAppKey;
+    var timestamp = util.common.getTimestamp();
+    var noncestr = util.common.createNonceStr();
+    var params = {
+      app_id: appId,
+      time_stamp: timestamp,
+      nonce_str: noncestr,
+      image: base64
+    }
+
+
+    var sortParam = util.common.sortAscii(params) + "app_key=" + appKey;
+    //console.log("sortParam:   "+sortParam);
+    var signstr = MD5.md5(sortParam);
+    //console.log("signStr: "+ signstr)
+    wx.request({
+      url: 'https://api.ai.qq.com/fcgi-bin/ocr/ocr_generalocr',
+      data: {
+        app_id: appId,
+        time_stamp: timestamp,
+        nonce_str: noncestr,
+        sign: signstr,
+        image: base64
+      },
+      method: 'POST',
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      success: function (res) {
+        console.log(res.data);
+        console.log("识别：" + (new Date().getTime() - starttime))
+        starttime = new Date().getTime()
+        var resultJson = res.data;
+        var ret = res.data.ret;
+        if (ret == 0) {
+          var itemlist = res.data.data.item_list;
+          var showInfo = [];
+          var showInfoStr = "";
+          for (var item in itemlist) {
+            showInfoStr += itemlist[item].itemstring + "\n";
+            showInfo.push(itemlist[item].itemstring);
+          }
+
+          _this.setData({
+            showInfo: showInfo,
+            showInfoStr: showInfoStr
+          })
+          wx.hideLoading();
+          console.log(showInfo);
+        }
+
+      }, fail: function (res) {
+        wx.hideLoading();
+        wx.showToast({
+          title: res.msg,
+          icon: 'none'
+        })
+        console.log("fail " + res);
+      }, complete: function (res) {
+
+      }
+    })
+  },
+
   //一键复制
   copy: function (res) {
     var _this = this;

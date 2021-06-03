@@ -1,0 +1,9 @@
+/* pages/live/detail.wxss */
+#myVideo {
+  width: 100%;
+}
+.center{
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}

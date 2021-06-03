@@ -1,0 +1,36 @@
+/* pages/cropper2/cropper.wxss */
+
+.Scancode {
+  font-size: 39rpx;
+  background: #fff;
+  color:#fff;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.bottom {
+  position: absolute;
+  width: 100%;
+  bottom: 20rpx;
+  display: flex;
+  z-index: 10;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 140rpx;
+}
+.tip{
+  position: absolute;
+  width: 100%;
+  top: 5rpx;
+  display: flex;
+  z-index: 10;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  color:#fff;
+  align-items: center;
+}

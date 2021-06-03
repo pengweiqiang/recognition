@@ -1,0 +1,54 @@
+<view class="page">
+  <view  class="top-search-bar">
+
+    <van-search
+      placeholder="请输入搜索关键词"
+      bind:focus="jumpToSearch"
+    />
+  
+
+  <view >
+      <van-tabs  active="{{ selectedCatIndex}}" bind:change="categoryChanged">
+          <block wx:for="{{ categoryList }}" wx:key="item.itemId">
+            <van-tab title="{{ item.name }}"></van-tab>
+          </block>
+        </van-tabs>
+
+        <block wx:if="{{sortByList.length > 0}}">
+        <van-dropdown-menu >
+          <van-dropdown-item value="{{ selectedSortIndex}}" options="{{ sortByList }}"  bind:change="sortByChanged"/>
+        </van-dropdown-menu>
+      </block>
+  </view>
+</view>
+  <view style="margin-top:150px">
+    <view wx:for="{{ couponList }}" wx:key="{{ item.itemId }}" bindtap="jumpToDetail" data-index="{{index}}" hover-class="navigator-hover" style="margin-top:5px">
+      <block wx:if="{{index%9==8}}">
+        <view style="padding: 3px;">
+          <ad-custom unit-id="adunit-f05da62989bacda9"></ad-custom>
+        </view>
+      </block>
+      <van-card
+        thumb="{{ item.picUrl }}"
+      >
+        <view slot="title" class="coupon-list-title">
+          <view class="van-ellipsis">{{ item.shortTitle }}</view>
+        </view>
+
+        <view slot="desc" class="coupon-list-desc">
+          <view>热销 {{ item.saleCount }} 件</view>
+        </view>
+
+        <view slot="bottom" class="coupon-list-footer">
+          <van-row class="text-right">
+            <view>现价￥<text class="original-price">{{ item.originalPrice }}</text></view>
+            <view>
+              <van-tag plain type="danger">{{item.couponPrice}} 元券</van-tag> <text class="present-price"> ￥<text class="present-price-num">{{ item.presentPrice }}</text>
+                </text>
+              </view>
+          </van-row>
+        </view>
+      </van-card>
+    </view>
+  </view>
+</view>

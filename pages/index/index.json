@@ -1,3 +1,5 @@
 {
-  
+  "usingComponents": {
+    "van-action-sheet": "../../dist/action-sheet/index"
+  }
 }

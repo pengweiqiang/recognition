@@ -1,25 +1,53 @@
 <!--index.wxml-->
-<view class="container" style="background-image: url('http://p8r2kbbri.bkt.clouddn.com/132.png')">
-  <view class="userinfo">
+<view style="height:78%">
 
+
+  <view class="container userinfo">
     <image bindtap="addPicture" class="userinfo-avatar" src="../../images/saoyisao.png" background-size="cover"></image>
+    <view class="function_class">
+      <text bindtap="addPictureHand" class="hand">手写文字识别</text>
+      <block wx:if="{{showLive}}">
+        <text bindtap="live" class="hand" style="color:#d81e06;margin-left:30rpx">电视播放</text>
+      </block>
+    </view>
+    <view class="jinju">
+      <text style="margin-bottom:10px"> {{recommendText}}</text>
+      <ad unit-id="adunit-753194253062ac93"></ad>
+    </view>
+
   </view>
 
-  <image class="post" src="../../images/zanshang.png" bindtap='previewImage' />
+  <navigator target="miniProgram" open-type="navigate" app-id="wxd1940318aaeb6958" path="/pages/index/index" extra-data="" version="release">
+    <image class="post" src="../../images/shuiyin_logo.png" />
+  </navigator>
   <button session-from='weapp' class="contact-btn" open-type='contact'>
 
     <image class="post" style="top:110px" src="../../images/kefu.png" />
 
   </button>
-  <navigator target="miniProgram" open-type="navigate" app-id="wxc32a7d17af5153fd" path="/pages/index/index" extra-data="" version="release">
+  <navigator target="miniProgram" open-type="navigate" app-id="wxa5fa8a6ffa51ad11" path="/pages/index/index" extra-data="" version="release">
     <image class="post" style="top:170px" src="../../images/card_logo.png" />
   </navigator>
 
-  <navigator target="miniProgram" open-type="navigate" app-id="wxd1940318aaeb6958" path="/pages/index/index" extra-data="" version="release">
-    <image class="post" style="top:230px" src="../../images/doutu_logo.png" />
-  </navigator>
+  <!-- <navigator target="miniProgram" open-type="navigate" app-id="wxc35fd1193f81e100" path="/pages/index/index" extra-data="" version="release"> -->
+    <image class="post" style="top:230px" bindtap="reward" src="../../images/doutu_logo.png" />
+  <!-- </navigator> -->
 
   <navigator target="miniProgram" open-type="navigate" app-id="wxa86a90675a518176" path="/pages/welcome/welcome" extra-data="" version="release">
     <image class="post" style="top:290px" src="../../images/color_logo.png" />
   </navigator>
+
+
+
+ 
+
+    <van-action-sheet
+    show="{{ show }}"
+    actions="{{ actions }}"
+    bind:close="onClose"
+    bind:select="onSelect"
+  />
+
 </view>
+
+

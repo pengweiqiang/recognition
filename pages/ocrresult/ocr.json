@@ -1,0 +1,15 @@
+{
+  "usingComponents": {
+    "van-icon": "../../dist/icon/index",
+    "van-goods-action": "../../dist/goods-action/index",
+    "van-goods-action-icon": "../../dist/goods-action-icon/index",
+    "van-goods-action-button": "../../dist/goods-action-button/index",
+    "van-row": "../../dist/row/index",
+    "van-col": "../../dist/col/index",
+    "van-divider": "../../dist/divider/index",
+    "van-grid": "../../dist/grid/index",
+    "van-grid-item": "../../dist/grid-item/index",
+    "van-sticky": "../../dist/sticky/index"
+  }
+
+}

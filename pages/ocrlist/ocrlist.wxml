@@ -1,0 +1,46 @@
+  <view>
+  <add-tips text="点击添加到我的小程序" />
+
+  
+  <block  wx:for="{{datas}}" wx:for-item="item" wx:key="index"  >
+      <view class="card">
+        <view  data-cardurl="{{item.url}}" bindtap='cardItem'  >
+            <image class="image" mode="aspectFill" src="{{item.url}}" />
+            <!-- <text class="time">{{item.showInfo}}</text>
+            <view class="title">{{item.showInfo}}</view> -->
+        </view>
+        </view>
+        <block wx:if="{{index%4==0}}">
+ 
+          
+          <view class='ad'>
+            <ad-custom unit-id="adunit-03444e6bce5a2c91"></ad-custom>
+          </view>
+          <!-- <block wx:if="{{showLive && index == 0}}">
+            <view class='ad'>
+                <video 
+                id="myVideo" 
+                style="width:100%"
+                src="{{live_url}}" 
+                binderror="videoErrorCallback" 
+                unit-id="adunit-a4acb047927bacfc"
+                danmu-list="{{danmuList}}" 
+                enable-danmu 
+                danmu-btn 
+                show-center-play-btn='{{false}}' 
+                show-play-btn="{{true}}" 
+                autoplay="{{true}}"
+                controls 
+                picture-in-picture-mode="{{[]}}" 
+                bindenterpictureinpicture='bindVideoEnterPictureInPicture' 
+                bindleavepictureinpicture='bindVideoLeavePictureInPicture'>
+                </video>
+          </view>
+          </block> -->
+        </block>
+      
+    </block>
+
+    
+</view>
+

@@ -8,6 +8,8 @@ function getUserInfo(){
       user.loginWithWeapp(res.code).then(function (user) {
         var openid = user.get("authData").weapp.openid;
         console.log(user, 'user', user.id, res);
+        console.log("-----openid-----"+openid);
+        wx.aldstat.sendOpenid(openid)
         if (user.get("nickName")) {
 
           // 第二次登录，打印用户之前保存的昵称

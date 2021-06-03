@@ -1,0 +1,32 @@
+<van-sticky>
+<view>
+    <!-- <van-goods-action >
+        <van-goods-action-icon icon="/images/icons8-copy.png" text="复制" bind:click="Copy" />
+        <van-goods-action-icon icon="/images/icons8-erase.png" text="去换行" bind:click="Erase" />
+        <van-goods-action-icon icon="/images/icons8-great_britain.png" text="翻译" bind:click="bindTrans" />
+        <van-goods-action-icon icon="/images/icons8-china.png" text="校对" bind:click="Check" />
+        <van-goods-action-icon icon="/images/icons8-undo.png" text="原文" bind:click="Undo" />
+        <van-goods-action-icon icon="/images/share.png" text="原文分享" open-type="share" />
+    </van-goods-action> -->
+
+    <van-grid column-num="5" border="{{false}}">
+        <van-grid-item icon="/images/icons8-copy.png" text="复制" icon-size="20px" bind:click="Copy"/>
+        <van-grid-item icon="/images/icons8-erase.png" text="换行" icon-size="20px" bind:click="Erase"/>
+        <van-grid-item icon="/images/icons8-great_britain.png" icon-size="20px" text="翻译"  bind:click="bindTrans"/>
+        <van-grid-item icon="/images/icons8-china.png" text="校对" icon-size="20px" bind:click="Check"/>
+        <van-grid-item icon="/images/icons8-undo.png" text="原文" icon-size="20px" bind:click="Undo"/>
+        <!-- <van-grid-item icon="/images/share.png" text="分享" icon-size="20px" >
+            <button open-type='share'></button>
+            </van-grid-item> -->
+    </van-grid>
+
+</view>
+</van-sticky>
+<view style="margin-top:2px">
+<image src='{{src}}' wx:if="{{!autoHeight}}" class="img"  mode='widthFix'></image>
+<ad unit-id="adunit-1d74728b0c2abe04"></ad>
+<van-divider contentPosition="center" textColor="#1989fa" style="margin-top:10rpx">识别内容</van-divider>
+<view class='container'>
+    <textarea value='{{Text}}' placeholder="输入内容鸭" adjust-position="{{true}}" show-confirm-bar='{{true}}' bindconfirm="OK" class="ta" maxlength='-1' auto-height='{{autoHeight}}' bindblur='OK'></textarea>
+</view>
+</view>

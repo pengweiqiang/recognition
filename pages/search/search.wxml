@@ -1,0 +1,49 @@
+<view class="page">
+  <view class="top-search-bar">
+    
+    <van-search
+      placeholder="请输入搜索关键词"
+      bind:search="onSearch"
+      focus="true">
+    </van-search>
+  </view>
+  
+  <!-- <view hidden="{{ couponList.length != 0 }}">
+    <image src="../../images/search-tips.jpg" style="width:100%;" mode="widthFix"></image>
+  </view> -->
+
+  <view style="margin-top:135rpx">
+    <!-- <ad unit-id="adunit-ea064c7e0a86b763" ad-type="video" ad-theme="white" style="width:100%"></ad> -->
+    <view wx:for="{{ couponList }}" wx:key="{{ item.itemId }}" bindtap="jumpToDetail" data-index="{{index}}" hover-class="navigator-hover" style="backgroud-color:#ffffff;margin-top:5px">
+      <block wx:if="{{index%9==8}}">
+        <view style="padding: 3px;">
+          <ad-custom unit-id="adunit-2af09b193b69f670"></ad-custom>
+        </view>
+      </block>
+      <van-card
+        thumb="{{ item.picUrl }}"
+      >
+        <view slot="title" class="coupon-list-title">
+          <view class="van-ellipsis">{{ item.shortTitle }}</view>
+        </view>
+
+        <view slot="desc" class="coupon-list-desc">
+          <view>热销 {{ item.saleCount }} 件</view>
+        </view>
+
+        <view slot="bottom" class="coupon-list-footer">
+          <van-row class="text-right">
+            <view>现价￥<text class="original-price">{{ item.originalPrice }}</text></view>
+            <view>
+              <block wx:if="{{item.couponPrice != 0}}">
+                <van-tag plain type="danger">{{item.couponPrice}} 元券</van-tag> 
+              </block>
+              <text class="present-price"> ￥<text class="present-price-num">{{ item.presentPrice }}</text>
+                </text>
+              </view>
+          </van-row>
+        </view>
+      </van-card>
+    </view>
+  </view>
+</view>

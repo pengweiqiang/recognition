@@ -1,0 +1,81 @@
+
+page{
+  background-color: #fff;
+}
+.page_bd {
+  padding: 0 12px 50px 12px;
+}
+
+.original-price {
+  color: #999;
+  font-size: 15px;
+  text-decoration: line-through;
+}
+
+.price{
+  font-size:15px;
+}
+.origin-price{
+  font-size:15px;
+}
+
+.present-price {
+  color: #c32136;
+  font-size: 16px;
+}
+
+.present-price-num {
+  font-size: 22px;
+  font-weight:bold;
+}
+
+.sale-count-text {
+  color: #999;
+  font-size: 13px;
+}
+.contact-btn {
+  line-height: 0rpx;
+  text-align: center;
+  background-color: #fff;
+  padding: 0px;
+}
+button::after{
+  border: none;
+  }
+
+.coupon-time-row {
+  color: #fff;
+  font-size: 12px;
+  padding: 10px;
+  margin: 10px 0;
+  outline: 2px solid #fff;
+  outline-offset: -5px;
+  background-color: #ff6666;
+}
+
+.coupon-intro-row {
+  font-size: 12px;
+  padding: 10px;
+  margin: 0 0 10px 0;
+  border: 1px dashed #999;
+}
+
+.coupon-intro-pic-row {
+  box-shadow: 1px 10px 5px #999;
+}
+
+.coupon-tpwd-text {
+  font-size: 14px;
+  padding: 10px;
+  margin: 5px;
+  border: 1px dashed #999;
+}
+
+.text-center {
+  text-align: center;
+  font-size:15px;
+}
+
+.text-right {
+  text-align: right;
+}

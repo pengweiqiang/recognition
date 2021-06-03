@@ -1,0 +1,13 @@
+/* pages/live/index.wxss */
+.basis-xxl {
+  flex-basis: 100%;
+}
+
+.cover-image {
+  height: 80px!important;
+}
+.center{
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}

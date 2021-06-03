@@ -1,13 +1,45 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/ocr/ocr"
+    "pages/ocr/ocr",
+    "pages/cropper/cropper",
+    "pages/ocrresult/ocr",
+    "pages/pdddetail/detail",
+    "pages/pdd/pdd",
+    "pages/search/search",
+    "pages/cropper2/cropper",
+    "pages/ocrlist/ocrlist"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#1296db",
     "navigationBarTitleText": "传图识字",
-    "navigationBarTextStyle":"white"
-  }
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#bfbfbf",
+    "selectedColor": "#d81e06",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "识别",
+        "iconPath": "images/tab_ocr_unselected.png",
+        "selectedIconPath": "images/tab_ocr_selected.png"
+      },
+      {
+        "pagePath": "pages/ocrlist/ocrlist",
+        "text": "识别记录",
+        "iconPath": "images/tab_ocrlist_unselected.png",
+        "selectedIconPath": "images/tab_ocrlist_selected.png"
+      }
+    ]
+  },
+  "plugins": {
+    "WechatSI": {
+      "version": "0.3.4",
+      "provider": "wx069ba97219f66d99"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
 }

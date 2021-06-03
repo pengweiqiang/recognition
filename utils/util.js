@@ -9,6 +9,27 @@ const formatTime = date => {
   return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
 }
 
+function js_date_time(unixtime) {
+  if(unixtime == 0) {
+    return "";
+  }
+  var date = new Date(unixtime);
+  var y = date.getFullYear();
+  var m = date.getMonth() + 1;
+  m = m < 10 ? ('0' + m) : m;
+  var d = date.getDate();
+  d = d < 10 ? ('0' + d) : d;
+  var h = date.getHours();
+  h = h < 10 ? ('0' + h) : h;
+  var minute = date.getMinutes();
+  var second = date.getSeconds();
+  minute = minute < 10 ? ('0' + minute) : minute;
+  second = second < 10 ? ('0' + second) : second;
+  return y + '-' + m + '-' + d + ' ' + h + ':' + minute;
+
+}
+
+
 const formatNumber = n => {
   n = n.toString()
   return n[1] ? n : '0' + n
@@ -41,5 +62,6 @@ var common = {
 
 module.exports = {
   formatTime: formatTime,
+  js_date_time:js_date_time,
   common: common
 }

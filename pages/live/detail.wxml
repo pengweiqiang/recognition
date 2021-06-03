@@ -1,0 +1,34 @@
+<!--pages/live/detail.wxml-->
+<view hover-class="none" hover-stop-propagation="false">
+  <cu-custom bgColor="bg-gradual-pink" isCustom="{{true}}">
+    <view slot="content">注意：如果连接较慢，请耐心等待10秒以上，如果还加载不出来，退出界面再进重试。</view>
+  </cu-custom>
+  <view class="box">
+    <view class="padding-bottom bg-white">
+      <view class="flex justify-center">
+        <video 
+          id="myVideo" 
+          src="{{live_url}}" 
+          binderror="videoErrorCallback" 
+          unit-id="adunit-3d28dfeed875a63d"
+          danmu-list="{{danmuList}}" 
+          enable-danmu 
+          danmu-btn 
+          show-center-play-btn='{{false}}' 
+          show-play-btn="{{true}}" 
+          autoplay="{{true}}"
+          controls 
+          picture-in-picture-mode="{{[]}}" 
+          bindenterpictureinpicture='bindVideoEnterPictureInPicture' 
+          bindleavepictureinpicture='bindVideoLeavePictureInPicture'>
+        </video>
+      </view>
+
+      <view class="text-black text-bold text-center text-lg padding">
+        {{name}}
+      </view>
+      <van-button type="primary" style="display: flex;align-items: center;justify-content: center;" open-type="share">邀请好友一起看</van-button>
+      <ad unit-id="adunit-f30fa193603ba1d9"></ad>
+    </view>
+  </view>
+</view>

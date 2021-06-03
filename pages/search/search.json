@@ -1,0 +1,23 @@
+{
+  "usingComponents": {
+    "van-row": "../../../dist/row/index",
+    "van-col": "../../../dist/col/index",
+    "van-search": "../../../dist/search/index",
+    "van-tab": "../../../dist/tab/index",
+    "van-tabs": "../../../dist/tabs/index",
+    "van-button": "../../../dist/button/index",
+    "van-card": "../../../dist/card/index",
+    "van-tag": "../../../dist/tag/index",
+    "van-icon": "../../../dist/icon/index",
+    "van-dropdown-menu": "../../../dist/dropdown-menu/index",
+    "van-dropdown-item": "../../../dist/dropdown-item/index"
+  },
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "好物搜索",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": true
+  }
+}

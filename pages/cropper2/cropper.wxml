@@ -1,0 +1,13 @@
+<!--pages/cropper2/cropper.wxml-->
+<view class="tip">
+  <!-- <ad-custom unit-id="adunit-1fb2dc5caad98768"></ad-custom> -->
+  <text style="padding-right:4px">温馨提示：可拖动边线裁剪识别区域</text>
+</view>
+<view style="width:100%;height:600rpx;">
+  <image-cropper id="image-cropper" limit_move="{{true}}" disable_rotate="{{true}}" width="{{width}}" height="{{height}}" max_height="{{maxHeight}}" min_height="50" min_width="50" max_width="{{maxWidth}}" imgSrc="{{src}}" bindload="cropperload" bindimageload="loadimage"></image-cropper>
+</view>
+<view class='bottom'>
+    <button bindtap='submit' style="width:50%">确定</button>
+    <!-- <button class="button" catchtap='upload'>上传</button> -->
+
+</view>

@@ -1,0 +1,15 @@
+{
+  "enablePullDownRefresh":true,
+  "usingComponents":{
+    "van-notice-bar": "../../../dist/notice-bar/index",
+    "add-tips": "/component/add-tips/index"
+  },
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "小程序",
+    "backgroundColor": "#e2e3e4",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+  }
+}
